@@ -1,0 +1,884 @@
+/* =========================
+   THE NINTH CHAPTER
+   STYLE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0b;
+    color: #eee;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: #eee;
+    color: #0b0b0b;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #080808;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-content span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.loader-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.loader-line {
+    width: 0;
+    height: 1px;
+    background: #eee;
+    margin: 25px auto 0;
+    animation: loading 2s ease forwards;
+}
+
+@keyframes loading {
+    to {
+        width: 100px;
+    }
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    background: rgba(10, 10, 10, 0.65);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-logo {
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+#menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 9%;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255,255,255,0.07),
+            transparent 35%
+        ),
+        #0b0b0b;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.eyebrow,
+.small-title {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(75px, 13vw, 180px);
+    line-height: 0.75;
+    font-weight: 300;
+    margin: 30px 0 45px;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 430px;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.open-btn {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding: 15px 0;
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid #555;
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    gap: 45px;
+    border-color: white;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 40px;
+    left: 9%;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    color: #555;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.scroll-line {
+    width: 60px;
+    height: 1px;
+    background: #444;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 100px 15%;
+}
+
+.intro h2 {
+    max-width: 900px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(38px, 6vw, 80px);
+    line-height: 1;
+
+    font-weight: 300;
+
+    margin: 30px 0;
+}
+
+.intro > p:last-child {
+    max-width: 550px;
+    color: #888;
+    line-height: 1.9;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CHAPTER
+========================= */
+
+.chapter {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+    padding: 130px 9%;
+
+    background: #0b0b0b;
+}
+
+.chapter-dark {
+    background: #101010;
+}
+
+.chapter-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 100px;
+    color: #292929;
+}
+
+.chapter-content {
+    max-width: 800px;
+}
+
+.chapter-content h2,
+.details h2,
+.gallery h2,
+.wishes h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.85;
+    font-weight: 300;
+
+    margin: 30px 0 50px;
+}
+
+.chapter-content h2 i,
+.details h2 i,
+.gallery h2 i,
+.wishes h2 i {
+    font-weight: 300;
+}
+
+.chapter-content > p {
+    max-width: 580px;
+
+    color: #999;
+    line-height: 2;
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.quote {
+    margin-top: 60px;
+
+    padding-left: 25px;
+
+    border-left: 1px solid #555;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+
+/* =========================
+   LOVE CARDS
+========================= */
+
+.love-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+
+    margin-top: 50px;
+}
+
+.love-card {
+    min-height: 230px;
+
+    padding: 35px;
+
+    background: #161616;
+
+    transition: 0.4s;
+}
+
+.love-card:hover {
+    transform: translateY(-5px);
+    background: #1c1c1c;
+}
+
+.love-card span {
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.love-card h3 {
+    margin: 45px 0 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.love-card p {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    padding: 150px 9%;
+
+    background: #f0eee9;
+    color: #111;
+}
+
+.details-title .small-title {
+    color: #888;
+}
+
+.details-list {
+    align-self: center;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ccc;
+}
+
+.detail span {
+    color: #888;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.detail strong {
+    max-width: 250px;
+
+    text-align: right;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    padding: 150px 9%;
+    background: #0b0b0b;
+}
+
+.gallery-heading {
+    margin-bottom: 70px;
+}
+
+.gallery-heading > p:last-child {
+    color: #666;
+    font-size: 11px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.photo {
+    overflow: hidden;
+    background: #171717;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    filter: grayscale(30%);
+
+    transition: transform 0.7s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+.photo-one {
+    height: 550px;
+}
+
+.photo-two {
+    height: 350px;
+}
+
+.photo-three {
+    height: 350px;
+    margin-top: 200px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    padding: 150px 10%;
+
+    background: #dedbd4;
+    color: #111;
+}
+
+.letter {
+    max-width: 750px;
+    margin: auto;
+}
+
+.letter .small-title {
+    color: #777;
+}
+
+.letter h2 {
+    margin: 45px 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    font-weight: 400;
+}
+
+.letter-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    line-height: 1.7;
+}
+
+.letter-text p {
+    margin-bottom: 30px;
+}
+
+.signature {
+    margin-top: 70px;
+}
+
+.from {
+    text-align: right;
+    font-size: 18px;
+}
+
+
+/* =========================
+   WISHES
+========================= */
+
+.wishes {
+    min-height: 100vh;
+
+    padding: 150px 9%;
+
+    background: #0e0e0e;
+}
+
+.wish-container {
+    max-width: 800px;
+    margin-top: 70px;
+}
+
+.wish {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.wish span {
+    color: #555;
+    font-size: 10px;
+}
+
+.wish p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.07),
+            transparent 40%
+        ),
+        #080808;
+}
+
+.final-content h2 {
+    margin: 30px 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(80px, 15vw, 180px);
+    font-weight: 300;
+}
+
+.final-content > p {
+    color: #888;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.final-line {
+    width: 80px;
+    height: 1px;
+    background: #555;
+
+    margin: 50px auto;
+}
+
+.final-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.final-small {
+    margin-top: 30px;
+    font-size: 9px !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicBtn,
+#topBtn {
+    position: fixed;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #333;
+    border-radius: 50%;
+
+    background: rgba(15,15,15,0.8);
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    backdrop-filter: blur(10px);
+}
+
+#musicBtn {
+    bottom: 25px;
+    right: 25px;
+}
+
+#topBtn {
+    bottom: 80px;
+    right: 25px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+#topBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.3);
+
+    pointer-events: none;
+
+    animation: floatHeart 5s linear forwards;
+
+    z-index: 20;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(50px) scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    #navbar {
+        height: 65px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    #menuBtn {
+        display: block;
+    }
+
+    .hero {
+        padding: 100px 8%;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .intro {
+        padding: 100px 8%;
+    }
+
+    .intro h2 {
+        font-size: 43px;
+    }
+
+    .chapter {
+        display: block;
+        padding: 100px 8%;
+    }
+
+    .chapter-number {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+
+    .chapter-content h2,
+    .details h2,
+    .gallery h2,
+    .wishes h2 {
+        font-size: 60px;
+    }
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details {
+        display: block;
+        padding: 100px 8%;
+    }
+
+    .details-list {
+        margin-top: 70px;
+    }
+
+    .detail {
+        gap: 20px;
+    }
+
+    .detail strong {
+        font-size: 20px;
+    }
+
+    .gallery {
+        padding: 100px 8%;
+    }
+
+    .photo-grid {
+        display: block;
+    }
+
+    .photo-one,
+    .photo-two,
+    .photo-three {
+        height: 400px;
+        margin: 0 0 15px;
+    }
+
+    .letter-section {
+        padding: 100px 8%;
+    }
+
+    .letter h2 {
+        font-size: 60px;
+    }
+
+    .letter-text {
+        font-size: 21px;
+    }
+
+    .wishes {
+        padding: 100px 8%;
+    }
+
+    .wish {
+        gap: 20px;
+    }
+
+    .wish p {
+        font-size: 22px;
+    }
+
+    .final-content h3 {
+        font-size: 28px;
+    }
+
+}
