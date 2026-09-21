@@ -951,7 +951,7 @@ article {
 }
 
 .photos h2 {
-    font-family: var(--font-display);
+    font-family: "Cormorant Garamond", serif;
     font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 0.95;
     letter-spacing: -0.04em;
@@ -961,7 +961,7 @@ article {
 
 .photos > p {
     max-width: 620px;
-    font-family: inherit;
+    font-family: "Cormorant Garamond", serif;
     font-size: 0.95rem;
     line-height: 1.8;
     opacity: 0.7;
@@ -976,8 +976,7 @@ article {
 }
 
 .photo-card {
-    font-family: inherit;
-}
+    font-family: "Cormorant Garamond", serif;
 
 .photo-card img {
     width: 100%;
@@ -994,7 +993,7 @@ article {
 }
 
 .photo-card h3 {
-    font-family: inherit;
+    font-family: "Cormorant Garamond", serif;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
@@ -1002,7 +1001,7 @@ article {
 }
 
 .photo-card p {
-    font-family: inherit;
+    font-family: "Cormorant Garamond", serif;
     font-size: 0.85rem;
     line-height: 1.7;
     opacity: 0.65;
@@ -1116,9 +1115,9 @@ footer,
     background-image: none !important;
 }
 
-/* =========================
-   CHAPTER IV + LETTER ALIGNMENT
-========================= */
+    /* =========================
+    CHAPTER IV + LETTER ALIGNMENT
+    ========================= */
 
 .photos,
 .letter-section {
@@ -1160,8 +1159,8 @@ footer,
     }
 
    /* =========================
-   FIX CHAPTER IV
-========================= */
+           FIX CHAPTER IV
+    ========================= */
 
 .photos {
     background: #111111 !important;
@@ -1177,14 +1176,14 @@ footer,
 }
 
 .photos h2 {
-    font-family: var(--font-display) !important;
+    font-family: "Cormorant Garamond", serif !important;
     font-weight: 400 !important;
     letter-spacing: -0.04em;
     line-height: 0.95;
 }
 
 .photos > p {
-    font-family: inherit !important;
+    font-family: "Cormorant Garamond", serif !important;
 }
 
 .photo-grid {
@@ -1211,6 +1210,6 @@ footer,
 .photo-card span,
 .photo-card h3,
 .photo-card p {
-    font-family: inherit !important;
+    font-family: "Cormorant Garamond", serif !important;
 }
 }
