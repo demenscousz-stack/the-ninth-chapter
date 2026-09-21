@@ -191,19 +191,15 @@ document.querySelectorAll(".nav-links a")
 
     });
 
-
 /* =========================
-   SIMPLE MUSIC BUTTON
+MUSIC BUTTON
 ========================= */
 
-/*
-   Kalau nanti mau pakai lagu:
-   1. Masukkan file music.mp3 ke folder.
-   2. Tambahkan audio element di HTML.
-*/
+const musicBtn = document.getElementById("musicBtn");
 
-const musicBtn =
-    document.getElementById("musicBtn");
+const music = new Audio("music.mp3");
+music.loop = true;
+music.volume = 0.6;
 
 let musicPlaying = false;
 
@@ -211,11 +207,20 @@ musicBtn.addEventListener("click", () => {
 
     if (!musicPlaying) {
 
-        alert(
-            "Tambahkan file musik sendiri dan hubungkan ke script.js untuk mengaktifkan fitur musik."
-        );
+        music.play()
+            .then(() => {
+                musicPlaying = true;
+                musicBtn.textContent = "❚❚";
+            })
+            .catch(() => {
+                alert("Music couldn't be played. Please try again.");
+            });
 
-        musicPlaying = true;
+    } else {
+
+        music.pause();
+        musicPlaying = false;
+        musicBtn.textContent = "♫";
 
     }
 
