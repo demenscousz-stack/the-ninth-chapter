@@ -192,38 +192,16 @@ document.querySelectorAll(".nav-links a")
     });
 
 /* =========================
-MUSIC BUTTON
+   MUSIC BUTTON - SPOTIFY
 ========================= */
 
 const musicBtn = document.getElementById("musicBtn");
 
-const music = new Audio("music.mp3");
-music.loop = true;
-music.volume = 0.6;
-
-let musicPlaying = false;
-
 musicBtn.addEventListener("click", () => {
-
-    if (!musicPlaying) {
-
-        music.play()
-            .then(() => {
-                musicPlaying = true;
-                musicBtn.textContent = "❚❚";
-            })
-            .catch(() => {
-                alert("Music couldn't be played. Please try again.");
-            });
-
-    } else {
-
-        music.pause();
-        musicPlaying = false;
-        musicBtn.textContent = "♫";
-
-    }
-
+    window.open(
+        "https://open.spotify.com/album/3IeLAtjruojjZFpYNCLTZM",
+        "_blank"
+    );
 });
 
 
