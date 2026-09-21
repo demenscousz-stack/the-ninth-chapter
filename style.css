@@ -1093,3 +1093,25 @@ article {
 #musicBtn:active {
     transform: scale(0.92);
 }
+
+/* =========================
+   GLOBAL BACKGROUND FIX
+========================= */
+
+html,
+body {
+    background: #111111 !important;
+}
+
+section,
+header,
+main,
+footer,
+.hero,
+.note,
+.chapter,
+.photos,
+.letter-section {
+    background: #111111 !important;
+    background-image: none !important;
+}
