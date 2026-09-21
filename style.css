@@ -1158,4 +1158,59 @@ footer,
         padding-left: 22px;
         padding-right: 22px;
     }
+
+   /* =========================
+   FIX CHAPTER IV
+========================= */
+
+.photos {
+    background: #111111 !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.photos .container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.photos h2 {
+    font-family: var(--font-display) !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+}
+
+.photos > p {
+    font-family: inherit !important;
+}
+
+.photo-grid {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.photo-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.photo-card span,
+.photo-card h3,
+.photo-card p {
+    font-family: inherit !important;
+}
 }
